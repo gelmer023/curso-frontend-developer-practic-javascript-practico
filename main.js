@@ -1,20 +1,23 @@
 // Variables
 const menuEmail = document.querySelector('#navbar-email');
 const desktopMenu = document.querySelector('.desktop-menu');
-const email= document.querySelector('.email');
+const menuHamIcon= document.querySelector('.menu')
+const mobileMenu = document.querySelector('.mobile-menu')
 
 // eventos
 menuEmail.addEventListener('click', toggleDesktopMenu);
-email.addEventListener('click', notActive);
+menuHamIcon.addEventListener('click', toggleMobileMenu);
 
 // fuciones
-// notActive desactivar el recargo del el link de .navbar-email 
-function notActive(event){
-    event.preventDefault();
-    console.log("Se hizo click en el email")
-}
-// toggleDesktopMenu muestra/oculta el submenu .desktopMenu
-function toggleDesktopMenu(){
+
+// toggleDesktopMenu muestra/oculta el submenu .desktopMenu con el email de cuenta
+function toggleDesktopMenu(event){
     desktopMenu.classList.toggle('inactive');
+    // desactivar el recargo del el link de .navbar-email 
+    event.preventDefault();
+}
+// toggleMobileMenu muestra/oculta el menu con el icono de menu
+function toggleMobileMenu(){
+    mobileMenu.classList.toggle('inactive');
 
 }
